@@ -1,0 +1,12 @@
+name: Tests
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Run tests
+        uses: nathanheffley/laravel-phpunit-action@v0.1.0
