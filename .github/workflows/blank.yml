@@ -1,0 +1,15 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run composer
+      run: composer install --prefer-dist
+    - name: Run PHPUnit
+      run: php7.3 vendor/bin/phpunit
