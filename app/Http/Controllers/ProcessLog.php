@@ -11,7 +11,7 @@ class ProcessLog extends Controller
 
     public function getProcessLogs($processId)
     {
-        return response()->json(ProcessLogModel::where('process_id', $processId)->get()->paginate(25));
+        return response()->json(ProcessLogModel::where('process_id', $processId)->paginate(25));
     }
 
     public function getProcessLog($processId, $processLogId)
