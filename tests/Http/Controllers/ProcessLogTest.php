@@ -1,8 +1,13 @@
 <?php
 
+use Laravel\Lumen\Testing\DatabaseMigrations;
+
+
 class ProcessLogTest extends TestCase
 {
-
+    use DatabaseMigrations;
+    
+    
     public function testSuccessfulGetProcessLogs()
     {
         $response = $this->json('GET', '/v1/process/1/logs');
