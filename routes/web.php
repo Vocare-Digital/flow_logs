@@ -16,7 +16,9 @@ $router->get('', function () use ($router) {
 });
 
 $router->group(['prefix' => 'v1'], function () use ($router) {
-    $router->get('logs', ['uses' => 'LogController@getAllLogs']);
-    $router->get('logs/{process_name}', ['uses' => 'LogController@getProcessLogs']);
-    $router->post('log', ['uses' => 'LogController@create']);
+    $router->get('process', ['uses' => 'ProcessController@getAllProcesses']);
+    $router->get('process/{processId}', ['uses' => 'ProcessController@getProcess']);
+    $router->post('process', ['uses' => 'ProcessController@createProcess']);
+    $router->patch('process/{processId}', ['uses' => 'ProcessController@updateProcess']);
+    $router->delete('process/{processId}', ['uses' => 'ProcessController@deleteProcess']);
 });
