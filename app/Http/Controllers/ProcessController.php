@@ -25,7 +25,7 @@ class ProcessController extends Controller
             'name' => 'required'
         ]);
 
-        return response()->json(Process::create($request->all()));
+        return response()->json(Process::create($request->all()),201);
     }
 
     public function updateProcess(Request $request, $processId)
@@ -33,12 +33,12 @@ class ProcessController extends Controller
         $process = Process::findOrFail($processId);
         $process->update($request->all());
 
-        return response()->json($process, 201);
+        return response()->json($process, 200);
     }
 
     public function deleteProcess($processId)
     {
         Process::findOrFail($processId)->delete();
-        return response()->json('deleted', 201);
+        return response()->json('', 204);
     }
 }
