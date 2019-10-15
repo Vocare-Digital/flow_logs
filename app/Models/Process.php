@@ -13,4 +13,9 @@ class Process extends Model
         'name',
         'description'
     ];
+
+    public function logs()
+    {
+        return $this->hasMany('App\Models\ProcessLog');
+    }
 }
